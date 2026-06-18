@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Panel — Deploy. Scale. Dominate.</title>
+  <meta name="description" content="Cloud Panel is an insanely good, open-source game server management panel. Real-time console, live stats, SFTP, one-click server installs (Paper, Fabric, Vanilla & more), and a one-command VPS install." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Cloud Panel — Deploy. Scale. Dominate." />
+  <meta property="og:description" content="The open-source game server panel with a beautiful UI, live console, SFTP, one-click eggs and one-command VPS install." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.svg" alt="" /> Cloud&nbsp;Panel</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#eggs">Eggs</a>
+        <a href="#bot">Discord Bot</a>
+        <a href="#start">Get Started</a>
+        <a href="/docs">Docs</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn discord sm" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5a14.6 14.6 0 0 1 4.3 2.2 13.9 13.9 0 0 0-11-.7c.3-.4.7-.9 1-1.2L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 .8 11.6 1 15.2A19.9 19.9 0 0 0 7 18l.6-1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l.6 1a19.9 19.9 0 0 0 6-2.8c.3-4.2-.7-7.8-2.9-11.2zM8.3 13.2c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm7.4 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg>
+          Discord
+        </a>
+        <a class="btn primary sm desktop-only" href="/docs">Get&nbsp;Started</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="glow one"></div><div class="glow two"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">☁ Open-source game server panel</span>
+        <h1>Run game servers like a <span class="grad-text">pro.</span></h1>
+        <p class="lead">Cloud Panel is the insanely good control panel for your game servers — a real-time console, live CPU/RAM/disk stats, per-server SFTP, one-click installs for Paper, Fabric, Vanilla &amp; more, and a single command to deploy on any VPS.</p>
+        <div class="hero-cta">
+          <a class="btn primary lg" href="/docs#quick-start">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Get Started
+          </a>
+          <a class="btn discord lg" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5a14.6 14.6 0 0 1 4.3 2.2 13.9 13.9 0 0 0-11-.7c.3-.4.7-.9 1-1.2L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 .8 11.6 1 15.2A19.9 19.9 0 0 0 7 18l.6-1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l.6 1a19.9 19.9 0 0 0 6-2.8c.3-4.2-.7-7.8-2.9-11.2zM8.3 13.2c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm7.4 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg>
+            Join the Discord
+          </a>
+        </div>
+        <div class="hero-sub">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free &amp; open source</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> One-command VPS install</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No default passwords</span>
+        </div>
+      </div>
+
+      <div class="mock reveal">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="url">127.0.0.1:8080 — Genesis · console</span></div>
+        <div class="term" id="heroTerm">
+<span class="l c-dim">[Cloud Panel] Starting server 'Genesis'...</span>
+<span class="l c-cyan">[12:00:01] [Server thread/INFO]: Starting Cloud Panel server 1.0.0</span>
+<span class="l c-white">[12:00:02] [Server thread/INFO]: Preparing level "world"</span>
+<span class="l c-white">[12:00:03] [Server thread/INFO]: Listening on 0.0.0.0:25565</span>
+<span class="l c-green">[12:00:04] [Server thread/INFO]: Done (2.1s)! For help, type "help"</span>
+<span class="l c-violet">[12:00:08] [Server thread/INFO]: Steve42 joined the game</span>
+<span class="l c-white">[12:00:11] [Server thread/INFO]: &lt;Steve42&gt; this panel is insane</span>
+<span class="l"><span class="c-green">&gt; </span><span id="typed"></span><span class="cursor"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap trust">
+      <div class="row">
+        <span class="chip">🟢 Live console</span>
+        <span class="chip">📊 Real <b>CPU/RAM/Disk</b></span>
+        <span class="chip">🔑 SFTP <b>:5657</b></span>
+        <span class="chip">🧩 11 server eggs</span>
+        <span class="chip">🗄️ SQLite database</span>
+        <span class="chip">🤖 Discord bot</span>
+        <span class="chip">☁️ VPS in 1 command</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="section" style="padding-top:40px">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat"><div class="n" data-count="11">0</div><div class="k">Server eggs</div></div>
+        <div class="stat"><div class="n" data-count="27">0</div><div class="k">Bot commands</div></div>
+        <div class="stat"><div class="n" data-count="2">0</div><div class="k">Ports (8080 / 5657)</div></div>
+        <div class="stat"><div class="n" data-count="100" data-suffix="%">0</div><div class="k">Open source</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Everything included</span>
+        <h2>One panel to <span class="grad-text">rule every server</span></h2>
+        <p>From the first boot to scaling across nodes, Cloud Panel ships with the features you'd expect from premium hosting — for free.</p>
+      </div>
+      <div class="features">
+        <div class="card reveal"><div class="ic">⚡</div><h3>Real-time console</h3><p>Stream stdout/stderr live over WebSockets with ANSI colors, log replay, and a command box with history.</p></div>
+        <div class="card reveal"><div class="ic">📈</div><h3>Live resource stats</h3><p>True CPU, memory and disk usage sampled per server and drawn as smooth sparkline graphs.</p></div>
+        <div class="card reveal"><div class="ic">🧩</div><h3>One-click eggs</h3><p>Create a server and Cloud Panel downloads the real jar (Paper, Purpur, Fabric, Velocity…) and accepts the EULA.</p></div>
+        <div class="card reveal"><div class="ic">🔑</div><h3>Per-server SFTP</h3><p>Connect with FileZilla, WinSCP or VS Code on port <b>5657</b> — files scoped safely to each server.</p></div>
+        <div class="card reveal"><div class="ic">🗂️</div><h3>Built-in file manager</h3><p>Browse, edit, rename and delete server files right from the browser, with path-traversal protection.</p></div>
+        <div class="card reveal"><div class="ic">🛡️</div><h3>Secure by design</h3><p>JWT auth, bcrypt hashing, first-run setup wizard and <b>zero default passwords</b>.</p></div>
+        <div class="card reveal"><div class="ic">🖥️</div><h3>Nodes &amp; allocations</h3><p>Manage multiple nodes, locations and IP:port allocations from a slick admin console.</p></div>
+        <div class="card reveal"><div class="ic">🗄️</div><h3>Real database</h3><p>Durable, transactional SQLite under the hood — with an automatic JSON fallback so it always runs.</p></div>
+        <div class="card reveal"><div class="ic">☁️</div><h3>One-command VPS</h3><p>A single script installs Node, Java, a systemd service and your firewall — then prints your admin login.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE: CONSOLE ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap split reveal">
+      <div>
+        <span class="eyebrow">Live control</span>
+        <h3>Watch &amp; command your servers in real time</h3>
+        <p>The console streams every log line the instant it happens. Send commands, restart, or kill a runaway process — all without touching SSH.</p>
+        <ul class="feat-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> WebSocket streaming with ANSI colors &amp; log replay</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Start / Stop / Restart / Kill with graceful shutdown</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Crash detection &amp; auto status updates</li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <div class="panel-card">
+          <div class="pm-head"><span class="pm-dot"></span><b>Genesis</b><span style="color:var(--faint);font:12px var(--mono);margin-left:auto">running</span></div>
+          <div class="pm-body">
+            <div class="pm-metric"><div class="pm-lab"><span>CPU · 38%</span><b style="color:var(--text);font-family:var(--mono)">2 cores</b></div><div class="pm-bar"><i style="width:38%"></i></div></div>
+            <div class="pm-metric"><div class="pm-lab"><span>Memory · 1.4 GB</span><b style="color:var(--text);font-family:var(--mono)">/ 4 GB</b></div><div class="pm-bar"><i style="width:35%"></i></div></div>
+            <div class="pm-metric"><div class="pm-lab"><span>Disk · 6.2 GB</span><b style="color:var(--text);font-family:var(--mono)">/ 20 GB</b></div><div class="pm-bar"><i style="width:31%"></i></div></div>
+            <div style="font:12px/1.7 var(--mono);background:#05070d;border-radius:10px;padding:12px;color:#86efac;border:1px solid var(--border)">&gt; say Welcome to the network!<br/><span style="color:#67e8f9">[Server] Welcome to the network!</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE: EGGS ===== -->
+  <section class="section" id="eggs" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pre-installed templates</span>
+        <h2>Spin up <span class="grad-text">any server</span> in seconds</h2>
+        <p>Pick an egg when you create a server. Cloud Panel resolves the version, downloads the real files and accepts the EULA — automatically.</p>
+      </div>
+      <div class="eggs reveal">
+        <div class="egg"><div class="e">🟣</div><b>Paper</b><span>Minecraft: Java</span></div>
+        <div class="egg"><div class="e">🟪</div><b>Purpur</b><span>Minecraft: Java</span></div>
+        <div class="egg"><div class="e">🧵</div><b>Folia</b><span>Minecraft: Java</span></div>
+        <div class="egg"><div class="e">🧶</div><b>Fabric</b><span>Modded</span></div>
+        <div class="egg"><div class="e">🟩</div><b>Vanilla</b><span>Mojang</span></div>
+        <div class="egg"><div class="e">🚄</div><b>Velocity</b><span>Proxy</span></div>
+        <div class="egg"><div class="e">🌊</div><b>Waterfall</b><span>Proxy</span></div>
+        <div class="egg"><div class="e">☕</div><b>Generic Java</b><span>Any jar</span></div>
+        <div class="egg"><div class="e">🟢</div><b>Node.js</b><span>Any app</span></div>
+        <div class="egg"><div class="e">🐍</div><b>Python</b><span>Bots &amp; apps</span></div>
+        <div class="egg"><div class="e">🎮</div><b>Demo</b><span>Zero setup</span></div>
+        <div class="egg" style="border-style:dashed"><div class="e">➕</div><b>Your own</b><span>Easily added</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DISCORD BOT ===== -->
+  <section class="section" id="bot" style="padding-top:0">
+    <div class="wrap split rev reveal">
+      <div class="split-media">
+        <div class="panel-card" style="padding:18px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><img src="/img/logo.svg" style="width:34px"/><div><b>Cloud Panel Bot</b><div style="color:var(--faint);font-size:12px">/help · 27 commands</div></div></div>
+          <div style="display:grid;gap:8px;font-size:13px">
+            <div style="border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:10px;padding:10px 12px;background:rgba(34,211,238,.05)"><b>🛡️ Moderation</b><br/><span style="color:var(--muted)">/ban /kick /timeout /lock /slowmode /warn</span></div>
+            <div style="border:1px solid var(--border);border-left:3px solid var(--violet);border-radius:10px;padding:10px 12px;background:rgba(168,85,247,.05)"><b>🎫 Tickets</b><br/><span style="color:var(--muted)">panel · claim · transcript · close</span></div>
+            <div style="border:1px solid var(--border);border-left:3px solid var(--green);border-radius:10px;padding:10px 12px;background:rgba(52,211,153,.05)"><b>☁️ Server control</b><br/><span style="color:var(--muted)">/server list · status · power · send</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Companion bot</span>
+        <h3>Manage your community <span class="grad-text">&amp; your servers</span> from Discord</h3>
+        <p>The Cloud Panel Discord bot brings moderation, a gorgeous ticket system, welcome &amp; leave cards, autorole — and live control of your game servers — right into your server.</p>
+        <ul class="feat-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 27 slash commands, all beautifully themed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Start/stop servers &amp; run console commands from chat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tickets with HTML transcripts &amp; autorole on join</li>
+        </ul>
+        <div class="hero-cta" style="margin-top:24px">
+          <a class="btn discord" href="https://discord.com/oauth2/authorize?client_id=1517089584016523395&amp;permissions=8&amp;integration_type=0&amp;scope=bot+applications.commands" data-bot-invite target="_blank" rel="noopener">Add the bot</a>
+          <a class="btn ghost" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Join the Discord →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GET STARTED STEPS ===== -->
+  <section class="section" id="start" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Up &amp; running fast</span>
+        <h2>Live in <span class="grad-text">three steps</span></h2>
+        <p>On a fresh Ubuntu/Debian VPS, one command does the whole install — then you create your admin in the browser.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><div class="num">1</div><h3>Clone</h3><p>Pull the repo onto your server.<br/><br/><code>git clone &lt;repo&gt; cloud-panel</code></p></div>
+        <div class="step"><div class="num">2</div><h3>Install</h3><p>One script installs Node, Java, the service &amp; firewall.<br/><br/><code>sudo bash scripts/install.sh</code></p></div>
+        <div class="step"><div class="num">3</div><h3>Set up</h3><p>Open the panel, create your admin, and deploy your first server.<br/><br/><code>http://your-ip:8080</code></p></div>
+      </div>
+      <div style="max-width:760px;margin:34px auto 0" class="reveal">
+        <div class="code">
+          <div class="code-bar"><span class="t">your-vps — bash</span><span class="copy" data-copy="git clone &lt;your-repo-url&gt; cloud-panel && cd cloud-panel && sudo bash scripts/install.sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre><span class="tok-f">git</span> clone &lt;your-repo-url&gt; cloud-panel <span class="tok-k">&amp;&amp;</span> <span class="tok-f">cd</span> cloud-panel <span class="tok-k">&amp;&amp;</span> <span class="tok-f">sudo</span> bash scripts/install.sh</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions</span>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq reveal">
+        <details class="qa"><summary>Is Cloud Panel really free?</summary><div class="a">Yes — Cloud Panel is open source under the MIT license. Self-host it anywhere with no license keys, no limits, and no phone-home.</div></details>
+        <details class="qa"><summary>What do I need to run it?</summary><div class="a">Node.js 18+ for the panel itself. For Minecraft servers you'll also want Java — the VPS installer adds Temurin automatically. The demo egg needs nothing but Node.</div></details>
+        <details class="qa"><summary>Which servers can it run?</summary><div class="a">Out of the box: Paper, Purpur, Folia, Fabric, Vanilla, Velocity and Waterfall (auto-downloaded), plus generic Java, Node.js and Python apps. Adding your own egg takes a few lines.</div></details>
+        <details class="qa"><summary>Are there default passwords?</summary><div class="a">No. On first run you create your administrator through a setup wizard (or the CLI). There are no built-in accounts to forget about.</div></details>
+        <details class="qa"><summary>Can I control servers from Discord?</summary><div class="a">Yes! The companion Discord bot includes <span class="inline">/server list</span>, <span class="inline">/server status</span>, <span class="inline">/server power</span> and <span class="inline">/server send</span>, plus full moderation and tickets.</div></details>
+        <details class="qa"><summary>How is this site hosted?</summary><div class="a">This very page is served by a tiny zero-dependency Node server and exposed to the internet through a Cloudflare Tunnel — no open ports required. See the docs for the exact commands.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DISCORD CTA BAND ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="band reveal">
+        <h2>Join the <span class="grad-text">Cloud Panel</span> community</h2>
+        <p>Get help, share your setups, request features and hang out with other server owners. We'd love to have you.</p>
+        <div class="hero-cta">
+          <a class="btn discord lg" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5a14.6 14.6 0 0 1 4.3 2.2 13.9 13.9 0 0 0-11-.7c.3-.4.7-.9 1-1.2L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 .8 11.6 1 15.2A19.9 19.9 0 0 0 7 18l.6-1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l.6 1a19.9 19.9 0 0 0 6-2.8c.3-4.2-.7-7.8-2.9-11.2zM8.3 13.2c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm7.4 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg>
+            Join the Discord
+          </a>
+          <a class="btn ghost lg" href="/docs">Read the docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="/"><img src="/img/logo.svg" alt="" /> Cloud&nbsp;Panel</a>
+          <p>The open-source game server management panel. Deploy. Scale. Dominate.</p>
+          <div class="socials">
+            <a href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5a14.6 14.6 0 0 1 4.3 2.2 13.9 13.9 0 0 0-11-.7c.3-.4.7-.9 1-1.2L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 .8 11.6 1 15.2A19.9 19.9 0 0 0 7 18l.6-1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l.6 1a19.9 19.9 0 0 0 6-2.8c.3-4.2-.7-7.8-2.9-11.2zM8.3 13.2c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm7.4 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg></a>
+            <a href="https://github.com" data-github target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#eggs">Server eggs</a><a href="#bot">Discord bot</a><a href="/docs#quick-start">Quick start</a></div>
+        <div class="foot-col"><h4>Docs</h4><a href="/docs#quick-start">Quick start</a><a href="/docs#vps">VPS deploy</a><a href="/docs#sftp">SFTP</a><a href="/docs#api">API</a></div>
+        <div class="foot-col"><h4>Community</h4><a href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Discord</a><a href="https://github.com" data-github target="_blank" rel="noopener">GitHub</a><a href="/docs#faq">FAQ</a></div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year"></span> Cloud Panel · MIT License · Not affiliated with Pterodactyl or PufferPanel.</span>
+        <span>Built with ☁️ &amp; ⚡</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

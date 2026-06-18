@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs — Cloud Panel</title>
+  <meta name="description" content="Cloud Panel documentation: installation, VPS deploy, first-run setup, server eggs, SFTP, CLI, the Discord bot, REST API and Cloudflare Tunnel hosting." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.svg" alt="" /> Cloud&nbsp;Panel</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/#features">Features</a>
+        <a href="/#eggs">Eggs</a>
+        <a href="/#bot">Discord Bot</a>
+        <a href="/docs">Docs</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn discord sm" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Discord</a>
+        <a class="btn primary sm desktop-only" href="#quick-start">Quick Start</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap docs">
+    <!-- SIDEBAR -->
+    <aside class="docs-side">
+      <div class="group">
+        <h5>Getting Started</h5>
+        <a href="#introduction">Introduction</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#quick-start">Quick Start</a>
+      </div>
+      <div class="group">
+        <h5>Deployment</h5>
+        <a href="#vps">VPS Install</a>
+        <a href="#setup">First-run Setup</a>
+        <a href="#configuration">Configuration</a>
+      </div>
+      <div class="group">
+        <h5>Using Cloud Panel</h5>
+        <a href="#servers">Servers &amp; Eggs</a>
+        <a href="#sftp">Files &amp; SFTP</a>
+        <a href="#users">Users &amp; CLI</a>
+      </div>
+      <div class="group">
+        <h5>Reference</h5>
+        <a href="#api">REST API</a>
+      </div>
+      <div class="group">
+        <h5>Help</h5>
+        <a href="#faq">FAQ</a>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="docs-main">
+      <h1>Documentation</h1>
+      <p class="doc-lead">Everything you need to install, deploy and master Cloud Panel — the open-source game server management panel.</p>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Cloud Panel is a self-hosted control panel for game servers. It gives you a real-time console, true CPU/RAM/disk metrics, a built-in file manager, per-server SFTP, one-click server installs ("eggs"), a multi-node admin area, and a companion Discord bot — all wrapped in a fast, beautiful UI.</p>
+        <ul>
+          <li>Web panel &amp; API on port <span class="inline">8080</span> (PufferPanel's port).</li>
+          <li>SFTP on port <span class="inline">5657</span> (PufferPanel's port).</li>
+          <li>Durable <b>SQLite</b> database with an automatic JSON fallback.</li>
+          <li><b>No default passwords</b> — you create your admin on first run.</li>
+        </ul>
+        <div class="callout">New here? Jump to the <a class="link" href="#quick-start">Quick Start</a> to try it locally, or the <a class="link" href="#vps">VPS Install</a> to go live in one command.</div>
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements</h2>
+        <ul>
+          <li><b>Node.js 18+</b> (20+ recommended) — required for the panel.</li>
+          <li><b>Java</b> (Temurin 21) — only if you run Minecraft servers. The VPS installer adds it automatically.</li>
+          <li><b>OS:</b> Linux (Ubuntu/Debian recommended for the installer), or Windows/macOS for local use.</li>
+          <li>Open ports <span class="inline">8080</span> (web) and <span class="inline">5657</span> (SFTP), plus your game port range (default <span class="inline">25565-25600</span>).</li>
+        </ul>
+      </section>
+
+      <section id="quick-start">
+        <h2>Quick Start (local)</h2>
+        <p>Try Cloud Panel on your own machine in under a minute.</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="cd cloud-panel
+npm install
+npm start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>cd cloud-panel
+npm install
+npm start</pre>
+        </div>
+        <p>Open <span class="inline">http://localhost:8080</span> and the first-run wizard will walk you through creating your administrator. That's it — create a server and hit <b>Start</b>.</p>
+        <div class="callout">The <b>Demo</b> egg boots instantly with no Java required — perfect for trying the console and live stats.</div>
+      </section>
+
+      <section id="vps">
+        <h2>VPS Install (one command)</h2>
+        <p>On a fresh <b>Ubuntu/Debian</b> server, upload or clone the project, then run the installer:</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">your-vps — bash</span><span class="copy" data-copy="git clone <your-repo-url> cloud-panel
+cd cloud-panel
+sudo bash scripts/install.sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>git clone &lt;your-repo-url&gt; cloud-panel
+cd cloud-panel
+sudo bash scripts/install.sh</pre>
+        </div>
+        <p>The installer will:</p>
+        <ul>
+          <li>Install <b>Node.js</b>, build tools and <b>Java</b> (Temurin).</li>
+          <li>Create a locked-down <span class="inline">cloudpanel</span> user and install to <span class="inline">/opt/cloud-panel</span>.</li>
+          <li>Generate a <span class="inline">.env</span> with a random JWT secret &amp; your public IP.</li>
+          <li><b>Create your administrator</b> (prompts, or auto-generates a strong password and prints it).</li>
+          <li>Register a <b>systemd</b> service and open the firewall.</li>
+        </ul>
+        <h3>Managing the service</h3>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="systemctl status cloud-panel
+journalctl -u cloud-panel -f
+sudo bash scripts/update.sh
+sudo bash scripts/uninstall.sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>systemctl status cloud-panel      # service state
+journalctl -u cloud-panel -f      # live logs
+sudo bash scripts/update.sh       # update + restart
+sudo bash scripts/uninstall.sh    # remove (--purge to delete data)</pre>
+        </div>
+        <div class="callout warn">For a public domain, put Cloud Panel behind Nginx/Caddy with TLS, proxying <span class="inline">http://127.0.0.1:8080</span>. Keep port <span class="inline">5657</span> open for SFTP.</div>
+      </section>
+
+      <section id="setup">
+        <h2>First-run Setup</h2>
+        <p>Cloud Panel ships with <b>no accounts</b>. Create your first administrator one of two ways:</p>
+        <h3>Web wizard</h3>
+        <p>Just open the panel — if no users exist you'll see the setup wizard. Enter a username, email and password and you're in.</p>
+        <h3>CLI</h3>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="npm run setup
+# or non-interactively:
+node src/scripts/setup.js --username admin --email you@example.com --password 'S3cret!!'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>npm run setup
+# or non-interactively:
+node src/scripts/setup.js --username admin --email you@example.com --password 'S3cret!!'</pre>
+        </div>
+      </section>
+
+      <section id="configuration">
+        <h2>Configuration</h2>
+        <p>All settings are environment variables (in <span class="inline">.env</span> or your shell). The most common:</p>
+        <table class="api">
+          <thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><span class="inline">CP_WEB_PORT</span></td><td>8080</td><td>Web/API port</td></tr>
+            <tr><td><span class="inline">CP_SFTP_PORT</span></td><td>5657</td><td>SFTP port</td></tr>
+            <tr><td><span class="inline">CP_PUBLIC_HOST</span></td><td>127.0.0.1</td><td>Address shown for allocations/SFTP</td></tr>
+            <tr><td><span class="inline">CP_JWT_SECRET</span></td><td><em>random</em></td><td>Token signing secret — keep private</td></tr>
+            <tr><td><span class="inline">CP_ALLOC_START/END</span></td><td>25565 / 25600</td><td>Seeded game port range</td></tr>
+            <tr><td><span class="inline">CP_FORCE_JSON</span></td><td>0</td><td>Set 1 to force the JSON store over SQLite</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="servers">
+        <h2>Servers &amp; Eggs</h2>
+        <p>An <b>egg</b> is a server template. When you create a server and pick an egg, Cloud Panel resolves the version, downloads the real files and (for Minecraft) accepts the EULA.</p>
+        <h3>Create a server</h3>
+        <ul>
+          <li>Go to <b>Admin → Servers → Create Server</b>.</li>
+          <li>Choose an owner, node and egg, set memory/disk/CPU, and edit the egg's variables (version, build…).</li>
+          <li>Auto-installing eggs provision in the background — watch progress live in the console.</li>
+        </ul>
+        <h3>Included eggs</h3>
+        <ul>
+          <li><b>Minecraft: Java</b> — Paper, Purpur, Folia, Fabric, Vanilla (auto-download + EULA).</li>
+          <li><b>Proxies</b> — Velocity, Waterfall.</li>
+          <li><b>Generic</b> — any Java jar, Node.js app, Python app.</li>
+          <li><b>Demo</b> — a simulated server that needs nothing but Node.</li>
+        </ul>
+        <div class="callout">Need a different game? Add an entry to the egg catalog (and an installer function if it should auto-download). It appears in the picker on next start.</div>
+      </section>
+
+      <section id="sftp">
+        <h2>Files &amp; SFTP</h2>
+        <p>Edit files in the browser from a server's <b>Files</b> tab, or connect any SFTP client on port <span class="inline">5657</span>.</p>
+        <table class="api">
+          <thead><tr><th>Field</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Host</td><td>your panel's IP / domain</td></tr>
+            <tr><td>Port</td><td><span class="inline">5657</span></td></tr>
+            <tr><td>Username</td><td><span class="inline">&lt;your-username&gt;.&lt;server-id&gt;</span> (shown on the Network tab)</td></tr>
+            <tr><td>Password</td><td>your account password</td></tr>
+          </tbody>
+        </table>
+        <p>Each login is scoped to that one server's files. Works great with FileZilla, WinSCP and the VS Code SFTP extension.</p>
+      </section>
+
+      <section id="users">
+        <h2>Users &amp; CLI</h2>
+        <p>Admins can manage users under <b>Admin → Users</b>. From the terminal:</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="npm run user list
+npm run user create --username bob --email b@x.io --password 'pw' --admin
+npm run user passwd bob
+npm run user promote bob
+npm run user demote bob
+npm run user delete bob --yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>npm run user list
+npm run user create --username bob --email b@x.io --password 'pw' --admin
+npm run user passwd bob
+npm run user promote bob      # grant admin
+npm run user demote bob       # revoke admin
+npm run user delete bob --yes</pre>
+        </div>
+        <div class="callout">Safety built in: the CLI won't delete or demote the last administrator, and won't delete a user who still owns servers.</div>
+      </section>
+
+      <section id="api">
+        <h2>REST API</h2>
+        <p>The panel exposes a JSON API under <span class="inline">/api</span>. Authenticate by logging in to get a JWT, then send it as <span class="inline">Authorization: Bearer &lt;token&gt;</span>.</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">get a token</span><span class="copy" data-copy="curl -X POST http://localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{&quot;login&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;your-pw&quot;}'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>curl -X POST http://localhost:8080/api/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{"login":"admin","password":"your-pw"}'</pre>
+        </div>
+        <table class="api">
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><span class="m get">GET</span></td><td><span class="inline">/api/setup/status</span></td><td>Whether first-run setup is needed</td></tr>
+            <tr><td><span class="m post">POST</span></td><td><span class="inline">/api/setup</span></td><td>Create the first admin (only when none exist)</td></tr>
+            <tr><td><span class="m post">POST</span></td><td><span class="inline">/api/auth/login</span></td><td>Get a JWT</td></tr>
+            <tr><td><span class="m get">GET</span></td><td><span class="inline">/api/servers</span></td><td>List your servers (with live resources)</td></tr>
+            <tr><td><span class="m get">GET</span></td><td><span class="inline">/api/servers/:id/resources</span></td><td>Live status, CPU, RAM, disk</td></tr>
+            <tr><td><span class="m post">POST</span></td><td><span class="inline">/api/servers/:id/power</span></td><td>start · stop · restart · kill</td></tr>
+            <tr><td><span class="m post">POST</span></td><td><span class="inline">/api/servers/:id/command</span></td><td>Send a console command</td></tr>
+            <tr><td><span class="m get">GET</span></td><td><span class="inline">/api/servers/:id/files/list</span></td><td>List files in a path</td></tr>
+            <tr><td><span class="m post">POST</span></td><td><span class="inline">/api/admin/servers</span></td><td>Create a server (admin)</td></tr>
+          </tbody>
+        </table>
+        <p>A live console stream is available over WebSocket at <span class="inline">/api/servers/:id/ws?token=&lt;jwt&gt;</span>.</p>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <h3>Is it free?</h3>
+        <p>Yes — MIT licensed and fully self-hostable.</p>
+        <h3>Does it use Docker?</h3>
+        <p>This build runs servers as host processes (CPU/RAM/disk are real). You can adapt eggs to containers if you prefer isolation.</p>
+        <h3>Where is data stored?</h3>
+        <p>In <span class="inline">data/cloud-panel.db</span> (SQLite). Per-server files live under <span class="inline">data/volumes/&lt;id&gt;</span>.</p>
+        <h3>Still stuck?</h3>
+        <p>Hop into the <a class="link" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Discord</a> — we're happy to help.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

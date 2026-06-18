@@ -1,0 +1,16 @@
+{
+  "name": "cloud-panel-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing + documentation website for Cloud Panel (zero-dependency static server, Cloudflare Tunnel ready).",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "tunnel": "cloudflared tunnel --url http://localhost:8090",
+    "host": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": ["cloud-panel", "website", "docs"],
+  "license": "MIT"
+}
