@@ -4,6 +4,8 @@ A beautiful, Cloud Panel-themed **marketing + documentation** site. Zero
 dependencies (a tiny Node static server), fully self-contained (no external
 CDNs), and ready to publish to the internet with a **Cloudflare Tunnel**.
 
+**Cloud Panel repository:** https://github.com/Notbangbang-dev/cloud-panel
+
 ## Run locally
 
 ```bash
