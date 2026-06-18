@@ -140,7 +140,12 @@ sudo bash scripts/uninstall.sh    # remove (--purge to delete data)</pre>
           <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="sudo cloud-panel-update"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
           <pre>sudo cloud-panel-update</pre>
         </div>
-        <div class="callout">First time only (to install the <span class="inline">cloud-panel-update</span> command): <span class="inline">cd ~/cloud-panel &amp;&amp; git pull &amp;&amp; sudo bash scripts/update.sh</span> — after that just run <span class="inline">sudo cloud-panel-update</span> anytime.</div>
+        <p>First time only — installs the global <span class="inline">cloud-panel-update</span> command (works on any existing install):</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="curl -fsSL https://raw.githubusercontent.com/Notbangbang-dev/cloud-panel/main/scripts/update.sh | sudo bash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>curl -fsSL https://raw.githubusercontent.com/Notbangbang-dev/cloud-panel/main/scripts/update.sh | sudo bash</pre>
+        </div>
+        <div class="callout">After that, just run <span class="inline">sudo cloud-panel-update</span> anytime — it's a permanent command available to every user (with sudo).</div>
 
         <div class="callout warn">For a public domain, put Cloud Panel behind Nginx/Caddy with TLS, proxying <span class="inline">http://127.0.0.1:8080</span>. Keep port <span class="inline">5657</span> open for SFTP.</div>
       </section>
