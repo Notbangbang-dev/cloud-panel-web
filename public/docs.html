@@ -126,13 +126,22 @@ sudo bash scripts/install.sh</pre>
         <div class="code">
           <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="systemctl status cloud-panel
 journalctl -u cloud-panel -f
-sudo bash scripts/update.sh
+sudo cloud-panel-update
 sudo bash scripts/uninstall.sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
           <pre>systemctl status cloud-panel      # service state
 journalctl -u cloud-panel -f      # live logs
-sudo bash scripts/update.sh       # update + restart
+sudo cloud-panel-update           # update to the latest version
 sudo bash scripts/uninstall.sh    # remove (--purge to delete data)</pre>
         </div>
+
+        <h3>Updating</h3>
+        <p>One command pulls the latest code, <b>keeps your <span class="inline">.env</span>, database &amp; backups</b>, reinstalls dependencies and restarts the service — no need to re-run the installer:</p>
+        <div class="code">
+          <div class="code-bar"><span class="t">bash</span><span class="copy" data-copy="sudo cloud-panel-update"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</span></div>
+          <pre>sudo cloud-panel-update</pre>
+        </div>
+        <div class="callout">First time only (to install the <span class="inline">cloud-panel-update</span> command): <span class="inline">cd ~/cloud-panel &amp;&amp; git pull &amp;&amp; sudo bash scripts/update.sh</span> — after that just run <span class="inline">sudo cloud-panel-update</span> anytime.</div>
+
         <div class="callout warn">For a public domain, put Cloud Panel behind Nginx/Caddy with TLS, proxying <span class="inline">http://127.0.0.1:8080</span>. Keep port <span class="inline">5657</span> open for SFTP.</div>
       </section>
 
