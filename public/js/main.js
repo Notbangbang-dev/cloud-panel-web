@@ -6,7 +6,7 @@
   const SITE = {
     discord: 'https://discord.gg/zuD93ztesn',
     botInvite: 'https://discord.com/oauth2/authorize?client_id=1517089584016523395&permissions=8&integration_type=0&scope=bot+applications.commands',
-    github: '', // set to your repo URL once it's created, e.g. 'https://github.com/you/cloud-panel'
+    github: 'https://github.com/Notbangbang-dev/cloud-panel',
   };
   if (SITE.discord) document.querySelectorAll('[data-discord]').forEach((a) => (a.href = SITE.discord));
   if (SITE.botInvite) document.querySelectorAll('[data-bot-invite]').forEach((a) => (a.href = SITE.botInvite));
