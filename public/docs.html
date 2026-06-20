@@ -48,6 +48,7 @@
       <div class="group">
         <h5>Using Cloud Panel</h5>
         <a href="#servers">Servers &amp; Eggs</a>
+        <a href="#teams">Teams, 2FA &amp; Databases</a>
         <a href="#sftp">Files &amp; SFTP</a>
         <a href="#users">Users &amp; CLI</a>
       </div>
@@ -191,15 +192,28 @@ node src/scripts/setup.js --username admin --email you@example.com --password 'S
           <li>Choose an owner, node and egg, set memory/disk/CPU, and edit the egg's variables (version, build…).</li>
           <li>Auto-installing eggs provision in the background — watch progress live in the console.</li>
         </ul>
-        <h3>Included eggs</h3>
+        <h3>Included eggs (27)</h3>
         <ul>
-          <li><b>Minecraft: Java</b> — Paper, Purpur, Folia, Fabric, Vanilla, Forge, NeoForge and Sponge (all auto-download/install). Spigot is upload-your-jar — use Paper for auto-install with plugin support.</li>
+          <li><b>Minecraft: Java</b> — Paper, Purpur, Folia, Fabric, Quilt, Pufferfish, Leaf, Vanilla, Forge, NeoForge and Sponge (all auto-download/install). Spigot is upload-your-jar — use Paper for auto-install with plugin support.</li>
+          <li><b>Modpacks</b> — one-click <b>Modrinth modpack</b>: enter a pack and Cloud Panel installs every mod, override and the matching loader.</li>
           <li><b>Proxies</b> — Velocity, Waterfall, BungeeCord (auto-download) and Geyser (Bedrock → Java bridge).</li>
-          <li><b>Other games</b> — Minecraft: Bedrock and Terraria (upload your files).</li>
+          <li><b>Other games</b> — Minecraft: Bedrock, PocketMine-MP and Terraria, plus SteamCMD games (Rust, Valheim, Counter-Strike 2).</li>
           <li><b>Generic</b> — any Java jar, Node.js app, Python app.</li>
           <li><b>Demo</b> — a simulated server that needs nothing but Node.</li>
         </ul>
         <div class="callout">Need a different game? Add an entry to the egg catalog (and an installer function if it should auto-download). It appears in the picker on next start.</div>
+      </section>
+
+      <section id="teams">
+        <h2>Teams, security &amp; databases</h2>
+        <ul>
+          <li><b>Subusers</b> — invite other accounts to a server (server's <b>Subusers</b> tab) with granular permissions: console, commands, power, files, backups, schedules, databases, players, startup, network, settings.</li>
+          <li><b>Scheduled tasks</b> — the <b>Schedules</b> tab runs commands, power actions or backups on a 5-field cron (e.g. <span class="inline">0 5 * * *</span> for a 5am restart).</li>
+          <li><b>Two-factor auth</b> — enable TOTP under <b>Account</b>; scan the QR with any authenticator app and save your recovery codes.</li>
+          <li><b>Databases</b> — add a MySQL/MariaDB host in <b>Admin → Databases</b> (needs the optional <span class="inline">mysql2</span> package), then create per-server databases from the server's <b>Databases</b> tab.</li>
+          <li><b>Plugins/mods</b> — search Modrinth and one-click install from the <b>Mods</b> tab.</li>
+          <li><b>Players, metrics &amp; status</b> — a live <b>Players</b> list (kick/ban), historical <b>Metrics</b> graphs, and an opt-in public status page at <span class="inline">/status/&lt;slug&gt;</span>.</li>
+        </ul>
       </section>
 
       <section id="sftp">

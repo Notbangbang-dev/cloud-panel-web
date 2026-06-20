@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Panel — Deploy. Scale. Dominate.</title>
-  <meta name="description" content="Cloud Panel is an insanely good, open-source game server management panel. Real-time console, live stats, SFTP, one-click server installs (Paper, Fabric, Vanilla & more), and a one-command VPS install." />
+  <meta name="description" content="Cloud Panel is an insanely good, open-source game server management panel. Real-time console, live stats, SFTP, subusers & 2FA, per-server databases, scheduled tasks, a Modrinth plugin browser, 27 one-click eggs, and a one-command VPS install." />
   <meta name="theme-color" content="#0b0f1a" />
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Cloud Panel — Deploy. Scale. Dominate." />
-  <meta property="og:description" content="The open-source game server panel with a beautiful UI, live console, SFTP, one-click eggs and one-command VPS install." />
+  <meta property="og:description" content="The open-source game server panel with a beautiful UI, live console, SFTP, subusers & 2FA, MySQL databases, cron schedules, a Modrinth browser, 27 eggs and one-command VPS install." />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -48,7 +48,7 @@
       <div>
         <span class="eyebrow">☁ Open-source game server panel</span>
         <h1>Run game servers like a <span class="grad-text">pro.</span></h1>
-        <p class="lead">Cloud Panel is the insanely good control panel for your game servers — a real-time console, live CPU/RAM/disk stats, per-server SFTP, one-click installs for Paper, Fabric, Vanilla &amp; more, and a single command to deploy on any VPS.</p>
+        <p class="lead">Cloud Panel is the insanely good control panel for your game servers — a real-time console, live CPU/RAM/disk stats, per-server SFTP, <b>subusers &amp; 2FA</b>, MySQL databases, cron schedules, a Modrinth plugin browser, 27 one-click eggs, and a single command to deploy on any VPS.</p>
         <div class="hero-cta">
           <a class="btn primary lg" href="/docs#quick-start">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -86,8 +86,9 @@
         <span class="chip">🟢 Live console</span>
         <span class="chip">📊 Real <b>CPU/RAM/Disk</b></span>
         <span class="chip">🔑 SFTP <b>:5657</b></span>
-        <span class="chip">🧩 19 server eggs</span>
-        <span class="chip">🗄️ SQLite database</span>
+        <span class="chip">🧩 27 server eggs</span>
+        <span class="chip">👥 Subusers <b>+ 2FA</b></span>
+        <span class="chip">🗄️ MySQL databases</span>
         <span class="chip">🤖 Discord bot</span>
         <span class="chip">☁️ One-command install</span>
       </div>
@@ -98,8 +99,8 @@
   <section class="section" style="padding-top:40px">
     <div class="wrap">
       <div class="stats reveal">
-        <div class="stat"><div class="n" data-count="19">0</div><div class="k">Server eggs</div></div>
-        <div class="stat"><div class="n" data-count="26">0</div><div class="k">Bot commands</div></div>
+        <div class="stat"><div class="n" data-count="27">0</div><div class="k">Server eggs</div></div>
+        <div class="stat"><div class="n" data-count="27">0</div><div class="k">Bot commands</div></div>
         <div class="stat"><div class="n" data-count="2">0</div><div class="k">Ports (8080 / 5657)</div></div>
         <div class="stat"><div class="n" data-count="100" data-suffix="%">0</div><div class="k">Open source</div></div>
       </div>
@@ -124,6 +125,14 @@
         <div class="card reveal"><div class="ic">🖥️</div><h3>Nodes &amp; allocations</h3><p>Manage multiple nodes, locations and IP:port allocations from a slick admin console.</p></div>
         <div class="card reveal"><div class="ic">🗄️</div><h3>Real database</h3><p>Durable, transactional SQLite under the hood — with an automatic JSON fallback so it always runs.</p></div>
         <div class="card reveal"><div class="ic">☁️</div><h3>One-command install</h3><p>On your own VPS, a single script installs Node, Java, a systemd service and your firewall — then prints your admin login.</p></div>
+        <div class="card reveal"><div class="ic">👥</div><h3>Subusers &amp; teams</h3><p>Invite others to a server with <b>granular permissions</b> — console, files, power, backups, databases &amp; more — enforced everywhere.</p></div>
+        <div class="card reveal"><div class="ic">⏰</div><h3>Scheduled tasks</h3><p>Cron-style schedules for nightly restarts, timed backups and automated commands — set it and forget it.</p></div>
+        <div class="card reveal"><div class="ic">🔐</div><h3>Two-factor auth</h3><p>Authenticator-app 2FA with QR enrollment and one-time recovery codes. Your TOTP secret never leaves the server.</p></div>
+        <div class="card reveal"><div class="ic">🗄️</div><h3>Per-server databases</h3><p>Provision real MySQL/MariaDB databases per server against admin-managed hosts — the classic Pterodactyl feature.</p></div>
+        <div class="card reveal"><div class="ic">🧩</div><h3>Modrinth browser</h3><p>Search Modrinth and one-click install plugins &amp; mods — plus a one-click modpack egg that installs the loader for you.</p></div>
+        <div class="card reveal"><div class="ic">🟢</div><h3>Live player list</h3><p>See who's online, parsed straight from the console, and kick or ban with a single click.</p></div>
+        <div class="card reveal"><div class="ic">📊</div><h3>Historical metrics</h3><p>Per-minute CPU, RAM, disk &amp; uptime history with real graphs — not just live sparklines.</p></div>
+        <div class="card reveal"><div class="ic">🌐</div><h3>Public status pages</h3><p>A shareable, login-free status page per server with live status, player count and uptime.</p></div>
       </div>
     </div>
   </section>
@@ -182,6 +191,14 @@
         <div class="egg"><div class="e">🧽</div><b>Sponge</b><span>Modded</span></div>
         <div class="egg"><div class="e">🟫</div><b>Bedrock</b><span>Minecraft</span></div>
         <div class="egg"><div class="e">🌳</div><b>Terraria</b><span>Survival</span></div>
+        <div class="egg"><div class="e">🧵</div><b>Quilt</b><span>Modded</span></div>
+        <div class="egg"><div class="e">🐡</div><b>Pufferfish</b><span>Minecraft: Java</span></div>
+        <div class="egg"><div class="e">🍃</div><b>Leaf</b><span>Minecraft: Java</span></div>
+        <div class="egg"><div class="e">📦</div><b>Modrinth Modpack</b><span>One-click</span></div>
+        <div class="egg"><div class="e">⛏️</div><b>PocketMine</b><span>Bedrock</span></div>
+        <div class="egg"><div class="e">🔫</div><b>Rust</b><span>SteamCMD</span></div>
+        <div class="egg"><div class="e">🪓</div><b>Valheim</b><span>SteamCMD</span></div>
+        <div class="egg"><div class="e">💣</div><b>Counter-Strike 2</b><span>SteamCMD</span></div>
         <div class="egg"><div class="e">🎮</div><b>Demo</b><span>Zero setup</span></div>
         <div class="egg" style="border-style:dashed"><div class="e">➕</div><b>Your own</b><span>Easily added</span></div>
       </div>
@@ -193,7 +210,7 @@
     <div class="wrap split rev reveal">
       <div class="split-media">
         <div class="panel-card" style="padding:18px">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><img src="/img/logo.svg" style="width:34px"/><div><b>Cloud Panel Bot</b><div style="color:var(--faint);font-size:12px">/help · 26 commands</div></div></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><img src="/img/logo.svg" style="width:34px"/><div><b>Cloud Panel Bot</b><div style="color:var(--faint);font-size:12px">/help · 27 commands</div></div></div>
           <div style="display:grid;gap:8px;font-size:13px">
             <div style="border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:10px;padding:10px 12px;background:rgba(34,211,238,.05)"><b>🛡️ Moderation</b><br/><span style="color:var(--muted)">/ban /kick /timeout /lock /slowmode /warn</span></div>
             <div style="border:1px solid var(--border);border-left:3px solid var(--violet);border-radius:10px;padding:10px 12px;background:rgba(168,85,247,.05)"><b>🎫 Tickets</b><br/><span style="color:var(--muted)">panel · claim · transcript · close</span></div>
@@ -206,7 +223,7 @@
         <h3>Power up your <span class="grad-text">community</span> on Discord</h3>
         <p>The Cloud Panel Discord bot brings moderation, a gorgeous ticket system, welcome &amp; leave cards, and autorole — all in one beautifully themed package.</p>
         <ul class="feat-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 26 slash commands, all beautifully themed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 27 slash commands, all beautifully themed</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full moderation: ban, kick, timeout, lock, slowmode, warnings</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tickets with HTML transcripts &amp; autorole on join</li>
         </ul>
@@ -250,9 +267,10 @@
       <div class="faq reveal">
         <details class="qa"><summary>Is Cloud Panel really free?</summary><div class="a">Yes — Cloud Panel is open source under the MIT license. Self-host it anywhere with no license keys, no limits, and no phone-home.</div></details>
         <details class="qa"><summary>What do I need to run it?</summary><div class="a">Node.js 18+ for the panel itself. For Minecraft servers you'll also want Java — the VPS installer adds Temurin automatically. The demo egg needs nothing but Node.</div></details>
-        <details class="qa"><summary>Which servers can it run?</summary><div class="a">19 templates out of the box. Auto-installed: Paper, Purpur, Folia, Fabric, Vanilla, Forge, NeoForge, Sponge, Velocity, Waterfall, BungeeCord and Geyser. Upload-your-files: Spigot (use Paper for auto), Minecraft: Bedrock and Terraria, plus generic Java, Node.js and Python apps. Adding your own egg takes a few lines.</div></details>
+        <details class="qa"><summary>Which servers can it run?</summary><div class="a">27 templates out of the box. Auto-installed: Paper, Purpur, Folia, Fabric, Quilt, Pufferfish, Leaf, Vanilla, Forge, NeoForge, Sponge, Velocity, Waterfall, BungeeCord and Geyser — plus one-click <b>Modrinth modpacks</b> and SteamCMD games (Rust, Valheim, CS2). Upload-your-files: Spigot (use Paper for auto), Minecraft: Bedrock, PocketMine-MP and Terraria, plus generic Java, Node.js and Python apps. Adding your own egg takes a few lines.</div></details>
+        <details class="qa"><summary>Can I share a server with my team?</summary><div class="a">Yes — invite other accounts as <b>subusers</b> with granular permissions (console, power, files, backups, schedules, databases, players and more). Secure accounts with authenticator-app <b>2FA</b>, and provision real <b>MySQL/MariaDB databases</b> per server.</div></details>
         <details class="qa"><summary>Are there default passwords?</summary><div class="a">No. On first run you create your administrator through a setup wizard (or the CLI). There are no built-in accounts to forget about.</div></details>
-        <details class="qa"><summary>Is there a Discord bot?</summary><div class="a">Yes! The companion Cloud Panel bot brings full moderation, a ticket system with HTML transcripts, welcome &amp; leave messages, and autorole — 26 beautifully themed slash commands. <a class="link" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Join the Discord</a> to add it.</div></details>
+        <details class="qa"><summary>Is there a Discord bot?</summary><div class="a">Yes! The companion Cloud Panel bot brings full moderation, a ticket system with HTML transcripts, welcome &amp; leave messages, and autorole — 27 beautifully themed slash commands. <a class="link" href="https://discord.gg/zuD93ztesn" data-discord target="_blank" rel="noopener">Join the Discord</a> to add it.</div></details>
         <details class="qa"><summary>How is this site hosted?</summary><div class="a">This very page is a static site hosted on <a class="link" href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>. Cloud Panel itself is the open-source app you self-host — see the <a class="link" href="/docs#vps">docs</a> to deploy it on your own VPS.</div></details>
       </div>
     </div>
@@ -302,3 +320,5 @@
   <script src="/js/main.js"></script>
 </body>
 </html>
+
+
