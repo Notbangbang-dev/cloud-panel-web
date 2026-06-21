@@ -29,6 +29,29 @@ const TYPES = {
   '.txt': 'text/plain; charset=utf-8',
 };
 
+// Baseline security headers. The site loads only same-origin JS (/js/main.js)
+// and CSS, uses inline style="" attributes, and links out to https sites, so
+// this CSP is safe without breaking anything.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https:",
+  "font-src 'self' data:",
+  "connect-src 'self' https:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+].join('; ');
+
+function setSecurityHeaders(res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+  res.setHeader('Content-Security-Policy', CSP);
+}
+
 function resolvePath(urlPath) {
   let p = decodeURIComponent(urlPath.split('?')[0].split('#')[0]);
   if (p === '/' || p === '') p = '/index.html';
@@ -44,6 +67,7 @@ function resolvePath(urlPath) {
 }
 
 const server = http.createServer((req, res) => {
+  setSecurityHeaders(res);
   const abs = resolvePath(req.url);
   if (!abs) {
     res.writeHead(403).end('Forbidden');
