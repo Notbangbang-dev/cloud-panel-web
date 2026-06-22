@@ -213,6 +213,7 @@ node src/scripts/setup.js --username admin --email you@example.com --password 'S
           <li><b>Databases</b> — add a MySQL/MariaDB host in <b>Admin → Databases</b> (needs the optional <span class="inline">mysql2</span> package), then create per-server databases from the server's <b>Databases</b> tab.</li>
           <li><b>Plugins/mods</b> — search Modrinth and one-click install from the <b>Mods</b> tab.</li>
           <li><b>Players, metrics &amp; status</b> — a live <b>Players</b> list (kick/ban), historical <b>Metrics</b> graphs, and an opt-in public status page at <span class="inline">/status/&lt;slug&gt;</span>.</li>
+          <li><b>Isolation &amp; sandboxing</b> — opt-in <b>OCI container sandbox</b> (<span class="inline">CP_OCI=1</span> with Docker/Podman) runs each server in its own locked-down container; or use per-server-user isolation. See <span class="inline">SECURITY.md</span>.</li>
         </ul>
       </section>
 
@@ -282,7 +283,7 @@ npm run user delete bob --yes</pre>
         <h3>Is it free?</h3>
         <p>Yes — MIT licensed and fully self-hostable.</p>
         <h3>Does it use Docker?</h3>
-        <p>This build runs servers as host processes (CPU/RAM/disk are real). You can adapt eggs to containers if you prefer isolation.</p>
+        <p>By default servers run as host processes (CPU/RAM/disk are real). For full isolation, enable the built-in <b>OCI container sandbox</b> — set <span class="inline">CP_OCI=1</span> with <b>Docker</b> or <b>Podman</b> installed and every server runs in its own locked-down container (dropped capabilities, no-new-privileges, a PID cap and hard RAM/CPU limits). It's opt-in; see <span class="inline">SECURITY.md</span>.</p>
         <h3>Where is data stored?</h3>
         <p>In <span class="inline">data/cloud-panel.db</span> (SQLite). Per-server files live under <span class="inline">data/volumes/&lt;id&gt;</span>.</p>
         <h3>Still stuck?</h3>
